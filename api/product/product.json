@@ -1,0 +1,26 @@
+{
+    "flagno":1,
+    "message":"Success",
+    "data":[
+        {
+            "code":"PR1",
+            "name":"Product 1",
+            "id":1
+        },
+        {
+            "code":"PR2",
+            "name":"Product 2",
+            "id":2
+        },
+        {
+            "code":"PR3",
+            "name":"Product 3",
+            "id":3
+        },
+        {
+            "code":"PR4",
+            "name":"Product 4",
+            "id":4
+        }
+    ]
+}
