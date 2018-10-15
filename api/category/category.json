@@ -1,0 +1,26 @@
+{
+    "flagno":1,
+    "message":"Success",
+    "data":[
+        {
+            "code":"A1",
+            "name":"test",
+            "id":1
+        },
+        {
+            "code":"A2",
+            "name":"test1",
+            "id":2
+        },
+        {
+            "code":"A3",
+            "name":"text2",
+            "id":3
+        },
+        {
+            "code":"A4",
+            "name":"text3456",
+            "id":4
+        }
+    ]
+}
