@@ -1,5 +1,5 @@
 <?php
-
+use App\Categories;
 use Illuminate\Http\Request;
 
 /*
@@ -14,5 +14,25 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
+
     return $request->user();
 });
+
+Route::get('/categories','Categories@index');
+
+/*Route::get('/categories', function(Request $request){
+    
+    $categories['data']=Categories::all();
+    return json_encode($categories);
+});*/
+
+/*Route::middleware('auth:api')->get('/categories', function (Request $request) {
+    $categories['data']=Categories::all();
+    return json_encode($categories);
+});*/
+
+//Route::get('/categories', 'ServiceController@create')->name('serviceCreate')->middleware('auth');
+
+/*Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('/categories', 'Categories@index');
+});*/
