@@ -1,20 +1,24 @@
 <?php
 
+use App\Categories;
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class Category extends Controller
+class Categories extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return Category::all();
+        //$model = \App\Model::all();
+            $categories['data']=\App\Categories::all();
+            return $request;
     }
 
     /**
@@ -36,6 +40,7 @@ class Category extends Controller
     public function store(Request $request)
     {
         //
+        return Categories::create($request->all());
     }
 
     /**
@@ -47,6 +52,7 @@ class Category extends Controller
     public function show($id)
     {
         //
+        return Categories::find($id);
     }
 
     /**
@@ -70,6 +76,10 @@ class Category extends Controller
     public function update(Request $request, $id)
     {
         //
+        $categories = Categories::findorFail($id);
+        $categories->update($request->all());
+
+        return $categories;
     }
 
     /**
