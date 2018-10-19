@@ -19,6 +19,7 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    protected $loginPath = 'login';
 
     /**
      * Where to redirect users after login.
