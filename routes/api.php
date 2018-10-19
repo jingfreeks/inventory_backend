@@ -13,13 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::group(['middleware' => ['web','auth:api']], function() {
+    Route::get('/categories', 'Categories@index');
+});
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
 
     return $request->user();
 });
 
-Route::get('/categories','Categories@index');
 
+//Route::get('/categories','Categories@index');
+
+//Route::middleware('auth:api')->resource('/categories','Categories@index');
 /*Route::get('/categories', function(Request $request){
     
     $categories['data']=Categories::all();
@@ -33,6 +40,3 @@ Route::get('/categories','Categories@index');
 
 //Route::get('/categories', 'ServiceController@create')->name('serviceCreate')->middleware('auth');
 
-/*Route::group(['middleware' => 'auth:api'], function() {
-    Route::get('/categories', 'Categories@index');
-});*/

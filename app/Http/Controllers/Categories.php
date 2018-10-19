@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class Categories extends Controller
 {
@@ -13,12 +14,21 @@ class Categories extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $projects;
+
     public function index(Request $request)
     {
         //
-        //$model = \App\Model::all();
+        if(Auth::user()){ 
             $categories['data']=\App\Categories::all();
-            return $request;
+            $json=json_encode($categories);
+            
+        }else{
+            $categories['message']="Error, You cannot Access this page";
+            $json=json_encode($categories);
+        }
+        $value=json_encode(Auth::user());
+        return $json;
     }
 
     /**
