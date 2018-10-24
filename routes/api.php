@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['web','auth:api']], function() {
     Route::get('/categories', 'Categories@index');
+    Route::get('/products','Products@index');
 });
 
 

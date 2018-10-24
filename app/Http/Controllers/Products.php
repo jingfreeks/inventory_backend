@@ -14,6 +14,20 @@ class Products extends Controller
     public function index()
     {
         //
+
+        if(Auth::user()){ 
+
+            $products['data']=\App\Products::all();
+            $json=json_encode($products);
+            
+        }else{
+
+            $products['message']="Error, You cannot Access this page";
+            $json=json_encode($products);
+            
+        }
+
+        return $json;
     }
 
     /**

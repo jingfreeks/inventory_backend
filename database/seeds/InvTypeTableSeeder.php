@@ -12,5 +12,16 @@ class InvTypeTableSeeder extends Seeder
     public function run()
     {
         //
+        InvTypes::truncate();
+
+        $faker = \Faker\Factory::create();
+
+        for($i=1;$i<20;$i++){
+            InvTypes::create([
+                'code'=>'code'.'-'.$i,
+                'name'=>$faker->name, 
+                'userid'=>1,
+            ]);
+        }
     }
 }

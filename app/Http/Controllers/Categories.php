@@ -27,7 +27,7 @@ class Categories extends Controller
             $categories['message']="Error, You cannot Access this page";
             $json=json_encode($categories);
         }
-        $value=json_encode(Auth::user());
+
         return $json;
     }
 
